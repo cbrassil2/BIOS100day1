@@ -1,5 +1,5 @@
 ---
-title: "BIOS 100 - Intro"
+title: "BIOS 100 - Day 1"
 author: "Your Name"
 date: "Fall 2024"
 output: html_document
