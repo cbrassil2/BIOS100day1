@@ -17,11 +17,11 @@ In many cases, asking and answering questions in biology means collecting data o
 
 # A Bunch of Programs: R, RStudio, Posit, and Github
 
-Here the names of some programs and websites you are using, but if you are viewing this, you've already moved through all of these steps. Some links and details are listed here for your future reference. 
+Here the names of some programs and websites you are using, but if you are viewing this, you've already moved through all of these steps. Some links and details are listed here for your future reference.
 
 We will use the program R for our work. R is one of the top programming languages used for data science. It is a a free program and most new statistical methods get published as library packages in R. Consequently, learning R gives you experience in a real-word tool for doing biological research and analysis.
 
-Optionally, you can download and install a copy of R onto your desktop computer at <https://cran.rstudio.com/>  and  then download and install RStudio at <https://posit.co/download/rstudio-desktop/>. However, as a beginner in this class, it will be easier to use a cloud-based online implementation of RStudio via the Posit Cloud. Using Posit Cloud is an easier way to get started because we don't have to mess with machine-specific installation requirements. Everything can be viewed through a browser window such as Chrome, Safari, or Edge. If you haven't already done so, you can create a free account at <https://posit.cloud/plans/free>. At some point, you may want to sign up for a paid student account, but for the purposes of this class, the free account is adequate.
+Optionally, you can download and install a copy of R onto your desktop computer at <https://cran.rstudio.com/> and then download and install RStudio at <https://posit.co/download/rstudio-desktop/>. However, as a beginner in this class, it will be easier to use a cloud-based online implementation of RStudio via the Posit Cloud. Using Posit Cloud is an easier way to get started because we don't have to mess with machine-specific installation requirements. Everything can be viewed through a browser window such as Chrome, Safari, or Edge. If you haven't already done so, you can create a free account at <https://posit.cloud/plans/free>. At some point, you may want to sign up for a paid student account, but for the purposes of this class, the free account is adequate.
 
 This file is being hosted on the github website so that you can easily download it into your Posit Cloud site. The url for the GitHub repository is <https://github.com/cbrassil2/BIOS100day1>.
 
@@ -31,7 +31,7 @@ Again, all of the above links are for your future reference. If you're reading t
 
 What you are viewing is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents the integrates output from R code. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-In R Markdown, the R code itself is contained in a "chunk" that look like this gray box below. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Enter in Windows or Cmd+Return in Mac.  
+In R Markdown, the R code itself is contained in a "chunk" that look like this gray box below. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Enter in Windows or Cmd+Return in Mac.
 
 ```{r}
 1 + 1
@@ -45,9 +45,6 @@ To insert a chunk, from the top menu, under Code select Insert Chunk (i.e. Code/
 
 Try that yourself with a new calculation...
 
-
-
-
 In R, you create a vector of numbers, which is essentially a kind of list, by using the c() function, which stands for combine.
 
 ```{r}
@@ -56,7 +53,7 @@ c(4,5,2,11)
 
 As an aside, this is a function because it has a word, or in this case a single letter, followed by opening and closing parentheses. Functions can have a single term, or in this case multiple terms separated by commas.
 
-A programming language is much more powerful than a calculator because we can store numbers in variable, and then reference that variable. There are different ways you can do this in R, with either a single equal sign or an arrow (typed using the minus sign and > or <). I prefer the arrow because it more explicitly communicates that you are storing a number in a variable. In addition, arrows have the advantage that can be used in either direction.
+A programming language is much more powerful than a calculator because we can store numbers in variable, and then reference that variable. There are different ways you can do this in R, with either a single equal sign or an arrow (typed using the minus sign and \> or \<). I prefer the arrow because it more explicitly communicates that you are storing a number in a variable. In addition, arrows have the advantage that can be used in either direction.
 
 ```{r}
 x = 6
@@ -81,7 +78,6 @@ Regular text sitting outside of these chunks can be used to describe the program
 4 + 5*3 #Here is a comment, which will not be interpreted as code. Use it to make notes for yourself.
 ```
 
-
 ```{r}
 c(4,5.5,2.1,3)
 ```
@@ -102,13 +98,13 @@ In the output, you see that everything now has quotes because it interpreted eve
 
 # Tidyverse and dplyr
 
-Tidyverse is a set of packages that make it easier for you to work with data in R. Optionally, you can view an overview at <https://www.tidyverse.org/>. The name comes from tidy, meaning clean and easy to use, and universe (or think multiverse). Tidyverse packages work together in a in an clean and easy to use way. 
+Tidyverse is a set of packages that make it easier for you to work with data in R. Optionally, you can view an overview at <https://www.tidyverse.org/>. The name comes from tidy, meaning clean and easy to use, and universe (or think multiverse). Tidyverse packages work together in a in an clean and easy to use way.
 
 One of the specific packages will use is called dplyr, which gets its name comes from the phrase "data pliers". In other words, tools you can use to grab and manipulate data, shortened to dplyr.
 
-Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete. 
+Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete.
 
-```{r, warning= = FALSE}
+```{r, warning = FALSE}
 #the warning = FALSE above suppresses a long list of messages telling you that the package has loaded
 if (!require("tidyverse")) install.packages("tidyverse") #install tidyverse, which includes dplyr and ggplot2.
 library(tidyverse) #load tidyverse
@@ -127,7 +123,7 @@ In base R we could shorten the code by skipping the step of storing the vector i
 mean(c(1.1, 2.1, 4.0)) #create a vector of data and then take the average
 ```
 
-A fundamental change that dplyr introduces is what is called a pipe, written as %>%. Here is an example of how it is used. 
+A fundamental change that dplyr introduces is what is called a pipe, written as %\>%. Here is an example of how it is used.
 
 ```{r}
 c(1.1, 2.1, 4.0) %>% #create a vector of data
@@ -144,9 +140,9 @@ c(1.1, 2.1, 4.0) %>% #create a vector of data
   mean() #take the average
 ```
 
-**Pro-tip**: you can select part of the above dlpyr code and execute just those parts. In the above code chunk, highlight just the part from c(1.1, 2.1. 3.2), i.e. the first line, but leave off the %>%. Now type the keys together: Ctrl+Enter in Windows or Cmd+Return in Mac. That runs the current line or selection. What does it output?
+**Pro-tip**: you can select part of the above dlpyr code and execute just those parts. In the above code chunk, highlight just the part from c(1.1, 2.1. 3.2), i.e. the first line, but leave off the %\>%. Now type the keys together: Ctrl+Enter in Windows or Cmd+Return in Mac. That runs the current line or selection. What does it output?
 
-Do that again but select all of the first line and all of the second line with the exception of the %>% at the end of the second line. What does it output?
+Do that again but select all of the first line and all of the second line with the exception of the %\>% at the end of the second line. What does it output?
 
 Finally, put your cursor anywhere in the above chunk, do not highlight anything, and type the same two keys. That should run the whole set of whole set of pipes.
 
@@ -160,7 +156,7 @@ Most of the time you'll be looking at not just a single vector of data, but rath
 pressure #example data set automatically loaded with tidyverse
 ```
 
-In based R, you can use a $ to reference an individual column in a data frame.
+In based R, you can use a \$ to reference an individual column in a data frame.
 
 ```{r}
 pressure$temperature
@@ -180,11 +176,11 @@ pressure %>%
   select(-pressure)
 ```
 
-Note, you may see references to a tibble, which is a tidyverse version of a data frame (and kind of sounds like the word table). They are used the same way in code. 
+Note, you may see references to a tibble, which is a tidyverse version of a data frame (and kind of sounds like the word table). They are used the same way in code.
 
 ## Plot data using ggplot()
 
-Data is often easier to think about when we plot it. We are going to use the function ggplot() to display our data graphically. The package that contains ggplot was loaded when we loaded tidyverse. It is a little complicated to start with ggplot because we have to use the nested function aes(), which stands for aesthetic, to state which column will be plotted on the x-axis and which will be plotted on the y-axis. 
+Data is often easier to think about when we plot it. We are going to use the function ggplot() to display our data graphically. The package that contains ggplot was loaded when we loaded tidyverse. It is a little complicated to start with ggplot because we have to use the nested function aes(), which stands for aesthetic, to state which column will be plotted on the x-axis and which will be plotted on the y-axis.
 
 ```{r}
 pressure %>%
@@ -193,7 +189,7 @@ pressure %>%
 
 In one more twist of complications, the above doesn't actually show us any data. It just lays out the axes. To plot the data points we have to use one more function, in this case geom_point() to plot a scatter plot. The name is a bit esoteric, but the "geom" part refers to the fact that we are making geometric object and the "point" part refers to the fact that we want to plot points.
 
-And in one more annoying twist of coding, when we are modifying output from ggplot() we have to use a "+" sign instead of "%>%". There is no good reason for this, it is artifact of how these functions developed over time.
+And in one more annoying twist of coding, when we are modifying output from ggplot() we have to use a "+" sign instead of "%\>%". There is no good reason for this, it is artifact of how these functions developed over time.
 
 ```{r}
 pressure %>%
@@ -210,7 +206,7 @@ pressure %>%
   theme_classic() #simple graph with no grid lines
 ```
 
-In the spirit of increasing the ink dedicated to the data, here is how you can use "size" to make the points bigger. I'm also going to change the shape from a filled-in-dot to an open circle. In general I prefer open circles because of they nicely display points when there are lots of partially overlapping data points. That is not the case here, but we'll practice the code now. 
+In the spirit of increasing the ink dedicated to the data, here is how you can use "size" to make the points bigger. I'm also going to change the shape from a filled-in-dot to an open circle. In general I prefer open circles because of they nicely display points when there are lots of partially overlapping data points. That is not the case here, but we'll practice the code now.
 
 ```{r}
 pressure %>%
@@ -233,7 +229,7 @@ Modify the code above so that the name of the y-axis is capitalized as well. Hin
 
 # Summarize and Group_by
 
-We are going to switch to another data set, in this case showing the sepal and petal length and width that was measured on some iris flowers of a few different species. In the case of an iris, the sepal are the three broad purple parts of the flower that look like outer flower petals but are derived from tissue that typically sits just below the flower in most other plants. In an iris, the petals are the three purple parts that stand more upright in the center fo the sepals. 
+We are going to switch to another data set, in this case showing the sepal and petal length and width that was measured on some iris flowers of a few different species. In the case of an iris, the sepal are the three broad purple parts of the flower that look like outer flower petals but are derived from tissue that typically sits just below the flower in most other plants. In an iris, the petals are the three purple parts that stand more upright in the center fo the sepals.
 
 ```{r}
 iris
@@ -260,7 +256,7 @@ iris %>%
 
 ## bar plot
 
-To plot that data, we'll use ggplot again, but 
+To plot that data, we'll use ggplot again, but
 
 ```{r}
 iris %>%
@@ -275,9 +271,7 @@ iris %>%
 
 Even I don't walk around with all of these coding details in my head. To make the above graph, I had to Google "R bar plot". I ended up using this website <http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization>, which showed my how to include the stat="identity" part in geom_bar. Looking up example code in Google is very useful. It is probably the number way I look for coding information. For example, a simple search such as "tidyverse summarise" quickly gets you to useful sites.
 
-And the online references linked through the tidyverse website are really great
-- dplyr <https://dplyr.tidyverse.org/>
-- ggplot2 <https://ggplot2.tidyverse.org/>
+And the online references linked through the tidyverse website are really great - dplyr <https://dplyr.tidyverse.org/> - ggplot2 <https://ggplot2.tidyverse.org/>
 
 Even more than looking up code via Google, I do a lot of copy/paste/modify of existing code. You can do the same. Copy the code from this file and future tutorials. Then modify the code to make it do what you want.
 
@@ -285,10 +279,9 @@ Even more than looking up code via Google, I do a lot of copy/paste/modify of ex
 
 Some people use what are called cheat sheets. These pack in lots of code for a quick reference. It may be too overwhelming for you right now, but know they exist.
 
-- dplyr cheatsheet: <https://rstudio.github.io/cheatsheets/data-transformation.pdf>
-- ggplot cheatsheet <https://rstudio.github.io/cheatsheets/data-visualization.pdf>
-- RStudio cheatsheet: <https://rstudio.github.io/cheatsheets/rstudio-ide.pdf>
-
+-   dplyr cheatsheet: <https://rstudio.github.io/cheatsheets/data-transformation.pdf>
+-   ggplot cheatsheet <https://rstudio.github.io/cheatsheets/data-visualization.pdf>
+-   RStudio cheatsheet: <https://rstudio.github.io/cheatsheets/rstudio-ide.pdf>
 
 ## Online Book
 
@@ -298,17 +291,13 @@ The book "R for Data Science (2e)" will cover many of the above topics in more d
 
 ## Tidyverse Practice
 
-Re-write the following code using tidyverse structure instead of base R. Hint: two lines of code for beginner status, but expand to three lines of code for master status. 
+Re-write the following code using tidyverse structure instead of base R. Hint: two lines of code for beginner status, but expand to three lines of code for master status.
 
 ```{r}
 max(pressure$temperature)
 ```
 
-
 Note, we've introduced a new function above, and I suspect you can figure out what it does. In words, describe what your above re-written code does?
-
-
-
 
 ## Debug
 
@@ -365,9 +354,9 @@ pressure %>%
 
 When you click the **Knit** button an html document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can use that to create a copy of your code that can be shared with others. When you've completed the challenges, knit this code and upload it in Canvas to complete your assignment.
 
-If Posit tells you that it needs to update some packages in order to complete the render, go ahead and say "Yes". 
+If Posit tells you that it needs to update some packages in order to complete the render, go ahead and say "Yes".
 
-After rendering the html, your browser will likely block Posit from opening the pop-up. You may be able to click on the popup-blocker icon in your browser. If it asks, you may be able to click "Try Again" to open the html document. Otherwise, you can click on the newly created ".html" file in the "Files" window in the lower right, and choose "View in Web Browser". 
+After rendering the html, your browser will likely block Posit from opening the pop-up. You may be able to click on the popup-blocker icon in your browser. If it asks, you may be able to click "Try Again" to open the html document. Otherwise, you can click on the newly created ".html" file in the "Files" window in the lower right, and choose "View in Web Browser".
 
 You can save the file directly from your browser. Alternatively, in the "Files" window check the box next to the html file. The, click on "More" in the menu and choose "Export...". This will allow you to download the html file.
 
