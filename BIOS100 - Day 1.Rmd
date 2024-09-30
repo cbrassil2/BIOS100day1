@@ -1,5 +1,5 @@
 ---
-title: "BIOS 100 - Intro"
+title: "BIOS 100 - Day 1"
 author: "Your Name"
 date: "Fall 2024"
 output: html_document
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Research is a central element of all science, including biology. Biology is an integrative science, which draws on methods from chemistry, physics, mathematics, and computer science to ask and to find answers to questions about life. For many, asking and answering questions is a central part of what excites them about biology.
 
-In many cases, asking and answering questions in biology means collecting data on cells, tissues, organisms, populations, or ecosystems. In your laboratory courses, you will have the time and resources to begin learning those methods. However, there are many questions in biology in which we make progress by analyzing existing data, and sometimes large data sets. There tremendous amounts of genetic data that we generated across individual research projects, which is now stored in central databases. The National Ecological Observatory Network (NEON) has been collected data on ecosystem processes at 81 sites across the United States since 2019. Research questions that utilize existing data allows us, in short introductory course, to jump right into the heart of asking and answering questions about life. At the same time, you will add some skills from data science to toolbox, something which you may draw in your future courses or career.
+In many cases, asking and answering questions in biology means collecting data on cells, tissues, organisms, populations, or ecosystems. In your laboratory courses, you will have the time and resources to begin learning those methods. However, there are many questions in biology in which we make progress by analyzing existing data, and sometimes large data sets. For example, there are tremendous amounts of genetic data that we generated across individual research projects, which is now stored in central databases. The National Ecological Observatory Network (NEON) has is set of data being collected on ecosystem processes at 81 sites across the United States since 2019. Research questions that utilize existing data allows us, in short introductory course, to jump right into the heart of asking and answering questions about life. At the same time, you will add some skills from data science to your toolbox, something which you may draw in your future courses or career.
 
 # A Bunch of Programs: R, RStudio, Posit, and Github
 
@@ -21,17 +21,17 @@ Here the names of some programs and websites you are using, but if you are viewi
 
 We will use the program R for our work. R is one of the top programming languages used for data science. It is a a free program and most new statistical methods get published as library packages in R. Consequently, learning R gives you experience in a real-word tool for doing biological research and analysis.
 
-Optionally, you can download and install a copy of R onto your desktop computer at <https://cran.rstudio.com/>  and  then download and install RStudio at <https://posit.co/download/rstudio-desktop/>. However, as a beginner in this class, it will be easier to use a cloud-based online implementation of RStudio via the Posit Cloud. Using Posit Cloud is an easier way to get started because we don't have to mess with machine-specific installation requirements. Everything can viewed through a browser window such as Chrome, Safari, or Edge. If you haven't already done so, you can create a free account at <https://posit.cloud/plans/free>. At some point, you may want to sign up for a paid student account, but for the purposes of this class, the free account is adequate.
+Optionally, you can download and install a copy of R onto your desktop computer at <https://cran.rstudio.com/>  and  then download and install RStudio at <https://posit.co/download/rstudio-desktop/>. However, as a beginner in this class, it will be easier to use a cloud-based online implementation of RStudio via the Posit Cloud. Using Posit Cloud is an easier way to get started because we don't have to mess with machine-specific installation requirements. Everything can be viewed through a browser window such as Chrome, Safari, or Edge. If you haven't already done so, you can create a free account at <https://posit.cloud/plans/free>. At some point, you may want to sign up for a paid student account, but for the purposes of this class, the free account is adequate.
 
-This file is being hosted on the github website so that you can easily download it into your Posit Cloud site. The url for the GitHub repository is <https://github.com/cbrassil2/BIOS100>.
+This file is being hosted on the github website so that you can easily download it into your Posit Cloud site. The url for the GitHub repository is <https://github.com/cbrassil2/BIOS100day1>.
 
 Again, all of the above links are for your future reference. If you're reading this you already have a Posit Cloud account in which RStudio is installed and you have downloaded this R Markdown file from GitHub. For now, ignore all of those details and proceed with the next section to understand how you actually make things happen in R Markdown.
 
 # R Markdown
 
-What you are viewing is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+What you are viewing is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents the integrates output from R code. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-In R Markdown, the R code itself is contained in a "chunk" that look like this. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Enter in Windows or Cmd+Return in Mac.  
+In R Markdown, the R code itself is contained in a "chunk" that look like this gray box below. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Enter in Windows or Cmd+Return in Mac.  
 
 ```{r}
 1 + 1
@@ -48,7 +48,7 @@ Try that yourself with a new calculation...
 
 
 
-In R, you create a vector of numbers, which is essentially a form of a list, by using the c() function, which stands for combine.
+In R, you create a vector of numbers, which is essentially a kind of list, by using the c() function, which stands for combine.
 
 ```{r}
 c(4,5,2,11)
@@ -56,7 +56,7 @@ c(4,5,2,11)
 
 As an aside, this is a function because it has a word, or in this case a single letter, followed by opening and closing parentheses. Functions can have a single term, or in this case multiple terms separated by commas.
 
-A programming language is much more powerful than a calculator because we can store numbers in variable, and then reference that variable. There are different ways you can do this in R, with either a single equal sign or an arrow (typed using the minus sign and > or <). I prefer the arrow because it more explicitly communicate that you are storing a number in a variable. In addition, arrows have the advantage that can be used in either direction.
+A programming language is much more powerful than a calculator because we can store numbers in variable, and then reference that variable. There are different ways you can do this in R, with either a single equal sign or an arrow (typed using the minus sign and > or <). I prefer the arrow because it more explicitly communicates that you are storing a number in a variable. In addition, arrows have the advantage that can be used in either direction.
 
 ```{r}
 x = 6
@@ -64,7 +64,7 @@ y <- 5
 4 -> fred
 ```
 
-Notice that variables can be single letters or whole words. In R a variable name can contain Capital letters, underscores, or periods.
+Notice that variables can be single letters or whole words. In R a variable name can contain capital letters, underscores, or periods.
 
 Also note that nothing is displayed from the above. If you store the output in R, it assumes you don't want to see the output. If you want to see the output, you have to explicitly ask for the output.
 
@@ -92,7 +92,7 @@ Note, that the R added a decimal point after the 4 and the 3. That is because th
 c(4,5,2,11)
 ```
 
-In this case, the output does not add any decimal point. In your project you may need to be aware of whether of the type of data. It generally will look at everything in a set of data and make it all the same type. For example, in the following vector I have add characters as a quoted string.
+In this case, the output does not add any decimal point. In your project you may need to be aware if data types. It general, R will look at everything in a set of data and make it all the same type. For example, in the following vector I have added character strings using quotes.
 
 ```{r}
 c("one","three",4, 5.6)
@@ -104,7 +104,7 @@ In the output, you see that everything now has quotes because it interpreted eve
 
 Tidyverse is a set of packages that make it easier for you to work with data in R. Optionally, you can view an overview at <https://www.tidyverse.org/>. The name comes from tidy, meaning clean and easy to use, and universe (or think multiverse). Tidyverse packages work together in a in an clean and easy to use way. 
 
-One of the specific packages will use is called dplyr, which gets its name comes from the data pliers. In other words, tools you can use to grab and manipulate data, shortened to dplyr.
+One of the specific packages will use is called dplyr, which gets its name comes from the phrase "data pliers". In other words, tools you can use to grab and manipulate data, shortened to dplyr.
 
 Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete. Then you can close the red text output by clicking the X in the right corner above the text. 
 
@@ -119,7 +119,7 @@ c(1.1, 2.1, 4.0) -> x #create a vector of three numbers and store it in the vari
 mean(x) #take the average of the vector
 ```
 
-In base R we could simplify this a bit by skipping the step of storing the vector in x, but you have nest a series of steps and read it from the inside out.
+In base R we could shorten the code by skipping the step of storing the vector in x, but we created a nested series of steps that must be read from the inside out.
 
 ```{r}
 mean(c(1.1, 2.1, 4.0)) #create a vector of data and then take the average
@@ -132,7 +132,7 @@ c(1.1, 2.1, 4.0) %>% #create a vector of data
   mean() #take the average
 ```
 
-The pipe takes the output from each line and places it in the first position of the function listed in the next line. This has two advantages. 1) You don't have to create a bunch or arbitrarily named variables. 2) You can read the code from bottom to top and think about each step modifying the output of the previous step. In other words, like data flowing down a water pipe, being manipulated at each step.
+The pipe takes the output from each line and places it in the first position of the function listed in the next line. This has two advantages. 1) You don't have to create a bunch or arbitrarily named variables. 2) You can read the code from top to the bottom (like a book) and think about each step modifying the output of the previous step. In other words, it is like data flowing down a water pipe, being manipulated at each step.
 
 Let's add one more intermediate step. After creating the vector of data, take the square root of each number. Then find the average.
 
@@ -163,6 +163,7 @@ In based R, you can use a $ to reference an individual column in a data frame.
 ```{r}
 pressure$temperature
 ```
+
 In tidyverse, you can use the select function to choose the column you want to see. Note, in database terminology, a column is also called a field.
 
 ```{r}
@@ -198,7 +199,7 @@ pressure %>%
   geom_point() #scatter plot
 ```
 
-While the above looks fine, many purists want a cleaner look without the background grid. There is a actually some theoretical rational for that, in ideas developed by Edward Tufte in book called "The Visual Display of Quantitative Information". Tufte argued that the bulk of the "ink" in a figure should be on the data of interest and not all the dressing around the data. In other words, eliminate the grid lines so that your eye can focus on the data.
+While the above looks fine, many purists want a cleaner look without the background grid. There is theoretical rational for that in ideas developed by Edward Tufte in book called "The Visual Display of Quantitative Information". Tufte argued that the bulk of the "ink" in a figure should be on the data of interest and not all the dressing around the data. In other words, eliminate the grid lines so that your eye can focus on the data.
 
 ```{r}
 pressure %>%
@@ -270,13 +271,13 @@ iris %>%
 
 # Resources for Finding Help
 
-Even I don't walk around with all of these details in my head. To make the above graph, I had to Google "R bar plot". I ended up using this website <http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization>, which showed my how to includ"e the stat="identity" part in geom_bar. Looking up example code in Google is very useful. It is probably the number way I look for coding information. A simple search such as "tidyverse summarise" quickly gets you to useful sites.
+Even I don't walk around with all of these coding details in my head. To make the above graph, I had to Google "R bar plot". I ended up using this website <http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization>, which showed my how to include the stat="identity" part in geom_bar. Looking up example code in Google is very useful. It is probably the number way I look for coding information. For example, a simple search such as "tidyverse summarise" quickly gets you to useful sites.
 
-And the online references linked through the tidyverse website really great
+And the online references linked through the tidyverse website are really great
 - dplyr <https://dplyr.tidyverse.org/>
 - ggplot2 <https://ggplot2.tidyverse.org/>
 
-Even more than looking up code via Google, I do a lot of copy/paste modify existing code. You can do the same. Copy the code from this file and future tutorials. Then modify the code to make it do what you want.
+Even more than looking up code via Google, I do a lot of copy/paste/modify of existing code. You can do the same. Copy the code from this file and future tutorials. Then modify the code to make it do what you want.
 
 ## Cheatsheets
 
@@ -302,7 +303,7 @@ max(pressure$temperature)
 ```
 
 
-Note, we've introduced a new function above, and I suspect you can figure out what it does. In words, describe what does the above code does?
+Note, we've introduced a new function above, and I suspect you can figure out what it does. In words, describe what your above re-written code does?
 
 
 
@@ -327,12 +328,12 @@ Everyone makes mistakes coding, or what we call bugs. A key skill set is learnin
 
 ### Challenge 3
 
-This uses geom_jitter, which is a version of geom_point, i.e. the scatterplot, which adds or subtracts a random value to shift potentially overlappign points so that you can see them all. Hint, the bug in this code is not within "geom_jitter(shape = 1)". That part is correctly used in this code.
+This uses geom_jitter, which is a version of geom_point, i.e. the scatter plot, which adds or subtracts a random value to shift potentially overlapping points so that you can see them all. Hint, the bug in this code is not within "geom_jitter(shape = 1)". That part is correctly used in this code.
 
 ```{r}
 iris %>%
   ggplot(aes(x=Sepal.Length, y=Sepal.Width)) %>%
-  geom_jitter(shape = 1) %>% #scatterplot which adds a small random value to each point
+  geom_jitter(shape = 1) %>% #scatter plot which adds a small random value to each point
   theme_classic()
 ```
 
@@ -344,7 +345,6 @@ Using the pressure data, plot the pressure versus the temperate as a line instea
 pressure %>%
   ggplot(aes(x=temperature,y=pressure)) +
   geom_line()
-
 ```
 
 ### Bonus Challenge
@@ -357,10 +357,16 @@ pressure %>%
   theme_classic() +
   geom_line() +
   geom_point()
-
 ```
 
 # Knit your workbook
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can use that to create a copy of your code that can be shared with others. When you've completed the challenges, knit this code and upload it in Canvas to complete your assignment.
+When you click the **Knit** button an html document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can use that to create a copy of your code that can be shared with others. When you've completed the challenges, knit this code and upload it in Canvas to complete your assignment.
 
+If Posit tells you that it needs to update some packages in order to complete the render, go ahead and say "Yes". 
+
+After rendering the html, your browser will likely block Posit from opening the pop-up. You may be able to click on the popup-blocker icon in your browser. If it asks, you may be able to click "Try Again" to open the html document. Otherwise, you can click on the newly created ".html" file in the "Files" window in the lower right, and choose "View in Web Browser". 
+
+You can save the file directly from your browser. Alternatively, in the "Files" window check the box next to the html file. The, click on "More" in the menu and choose "Export...". This will allow you to download the html file.
+
+Please upload the html file for the assignment in Canvas.
