@@ -106,7 +106,7 @@ Note, if this is the first time, it will have to download and install a number o
 
 ```{r, message=FALSE}
 if (!require("tidyverse")) install.packages("tidyverse") #install tidyverse, which includes dplyr and ggplot2.
-library(tidyverse) #load tidyverse
+library("tidyverse") #load tidyverse
 ```
 
 The package dplyr makes it easier to manipulate data in series of steps. For an overly simplistic example let's try to take the average, or mean, of a list of three numbers. In basic R syntax, you have to create a list of three numbers, store it in a variable, and then execute a function that takes the average
