@@ -147,7 +147,7 @@ Finally, put your cursor anywhere in the above chunk, do not highlight anything,
 
 Those two keys are incredibly useful when writing and debugging code.
 
-#Data Frames
+# Data Frames
 
 Most of the time you'll be looking at not just a single vector of data, but rather a data table, or what in R can be called a data frame. Here is an example data frame that is automatically loaded in R by Tidyverse. It shows the vapor pressure of Mercury as a function of temperature. For our purposes the details don't matter. We'll use it to see how you can manipulate a simple data frame.
 
@@ -240,7 +240,7 @@ The "summarize" function is used to take a number of rows and reduce them to a s
 
 ```{r}
 iris %>%
-  summarise(ave_petal = mean(Petal.Width), numer_of_flowers = n())
+  summarise(ave_petal = mean(Petal.Width), number_of_flowers = n())
 ```
 
 ## group_by()
