@@ -31,7 +31,7 @@ Again, all of the above links are for your future reference. If you're reading t
 
 What you are viewing is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents the integrates output from R code. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-In R Markdown, the R code itself is contained in a "chunk" that look like this gray box below. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Enter in Windows or Cmd+Return in Mac.
+In R Markdown, the R code itself is contained in a "chunk" that look like this gray box below. To execute this chunk and display an output, either click on the green arrow in the far right, or place your cursor anywhere in the gray area and type the following keys together: Ctrl+Shift+Enter in Windows or Cmd+Shift+Return in Mac.
 
 ```{r}
 1 + 1
@@ -105,8 +105,7 @@ One of the specific packages will use is called dplyr, which gets its name comes
 Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete. When it is completed, clicking the X in the upper right corner of the output will remove the messages in red text. 
 
 ```{r, message=FALSE}
-if (!require("tidyverse")) install.packages("tidyverse") #install tidyverse, which includes dplyr and ggplot2.
-library("tidyverse") #load tidyverse
+if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse") #install and load tidyverse
 ```
 
 The package dplyr makes it easier to manipulate data in series of steps. For an overly simplistic example let's try to take the average, or mean, of a list of three numbers. In basic R syntax, you have to create a list of three numbers, store it in a variable, and then execute a function that takes the average
