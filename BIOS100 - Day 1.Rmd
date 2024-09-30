@@ -104,8 +104,8 @@ One of the specific packages will use is called dplyr, which gets its name comes
 
 Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete.
 
-```{r, message=FALSE, warning=FALSE}
-#the message=FALSE and warning=FALSE above suppresses a long list of messages telling you that the package has loaded
+```{r, message=FALSE, warning=FALSE, results=FALSE}
+#the FALSE clauses above suppresses a long list of messages telling you that the package has loaded
 if (!require("tidyverse")) install.packages("tidyverse") #install tidyverse, which includes dplyr and ggplot2.
 library(tidyverse) #load tidyverse
 ```
