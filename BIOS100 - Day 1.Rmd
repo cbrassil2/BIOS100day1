@@ -104,7 +104,7 @@ One of the specific packages will use is called dplyr, which gets its name comes
 
 Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete. When it is completed, clicking the X in the upper right corner of the output will remove the messages in red text. 
 
-```{r}
+```{r, message=FALSE}
 if (!require("tidyverse")) install.packages("tidyverse") #install tidyverse, which includes dplyr and ggplot2.
 library(tidyverse) #load tidyverse
 ```
