@@ -1,5 +1,5 @@
 ---
-title: "BIOS 100 - Day 1"
+title: "BIOS 100 - Intro"
 author: "Your Name"
 date: "Fall 2024"
 output: html_document
@@ -36,6 +36,7 @@ In R Markdown, the R code itself is contained in a "chunk" that look like this. 
 ```{r}
 1 + 1
 ```
+
 Go ahead and change one of the numbers to something else and run the line again to see the new output.
 
 In the case above, I asked R to add two numbers and display the output.
@@ -47,13 +48,16 @@ Try that yourself with a new calculation...
 
 
 
-In R, you create a vector of numbers, which is essentially a form of a list, by using the c() function, which stands for combine. 
+In R, you create a vector of numbers, which is essentially a form of a list, by using the c() function, which stands for combine.
 
 ```{r}
 c(4,5,2,11)
 ```
 
+As an aside, this is a function because it has a word, or in this case a single letter, followed by opening and closing parentheses. Functions can have a single term, or in this case multiple terms separated by commas.
+
 A programming language is much more powerful than a calculator because we can store numbers in variable, and then reference that variable. There are different ways you can do this in R, with either a single equal sign or an arrow (typed using the minus sign and > or <). I prefer the arrow because it more explicitly communicate that you are storing a number in a variable. In addition, arrows have the advantage that can be used in either direction.
+
 ```{r}
 x = 6
 y <- 5
@@ -72,29 +76,29 @@ c(x,y,fred,z)
 ```
 
 Regular text sitting outside of these chunks can be used to describe the programming, but sometimes you'll want to include text within the code as a note to yourself. These are called comments, and start with #. For example
+
 ```{r}
 4 + 5*3 #Here is a comment, which will not be interpreted as code. Use it to make notes for yourself.
 ```
 
 
-
-
-
 ```{r}
 c(4,5.5,2.1,3)
 ```
+
 Note, that the R added a decimal point after the 4 and the 3. That is because the list included two numbers that had a decimal point, 5.5 and 2.1. R wants everything in the list to be the same type. Because 5.5 and 2.1 have decimals, they are what R calls numeric. If all elements in the list were typed as whole integers, R would interpret everything as an integer. For example, see
 
 ```{r}
 c(4,5,2,11)
 ```
+
 In this case, the output does not add any decimal point. In your project you may need to be aware of whether of the type of data. It generally will look at everything in a set of data and make it all the same type. For example, in the following vector I have add characters as a quoted string.
 
 ```{r}
 c("one","three",4, 5.6)
 ```
 
-In the output, you see that everything now has quotes becuase it interpretted everything as characters.
+In the output, you see that everything now has quotes because it interpreted everything as characters.
 
 # Tidyverse and dplyr
 
@@ -102,15 +106,19 @@ Tidyverse is a set of packages that make it easier for you to work with data in 
 
 One of the specific packages will use is called dplyr, which gets its name comes from the data pliers. In other words, tools you can use to grab and manipulate data, shortened to dplyr.
 
+Note, if this is the first time, it will have to download and install a number of packages. Wait a few minutes for it to complete. Then you can close the red text output by clicking the X in the right corner above the text. 
+
 ```{r}
-library(tidyverse) #load tidyverse, which includes dplyr and ggplot2
+if (!require("tidyverse")) install.packages("tidyverse") #load tidyverse, which includes dplyr and ggplot2. Note, if already installed, the shorter code will work too: library(tidyverse)
 ```
+
 The package dplyr makes it easier to manipulate data in series of steps. For an overly simplistic example let's try to take the average, or mean, of a list of three numbers. In basic R syntax, you have to create a list of three numbers, store it in a variable, and then execute a function that takes the average
 
 ```{r}
 c(1.1, 2.1, 4.0) -> x #create a vector of three numbers and store it in the variable x. We'll call this our data.
 mean(x) #take the average of the vector
 ```
+
 In base R we could simplify this a bit by skipping the step of storing the vector in x, but you have nest a series of steps and read it from the inside out.
 
 ```{r}
@@ -134,7 +142,7 @@ c(1.1, 2.1, 4.0) %>% #create a vector of data
   mean() #take the average
 ```
 
-Pro-tip: you can select part of the above dlpyr code and execute just those parts. In the above code chunk, highlight just the part from c(1.1, 2.1. 3.2), i.e. the first line, but leave off the %>%. Now type the keys together: Ctrl+Enter in Windows or Cmd+Return in Mac. That runs the current line or selection. What does it output?
+**Pro-tip**: you can select part of the above dlpyr code and execute just those parts. In the above code chunk, highlight just the part from c(1.1, 2.1. 3.2), i.e. the first line, but leave off the %>%. Now type the keys together: Ctrl+Enter in Windows or Cmd+Return in Mac. That runs the current line or selection. What does it output?
 
 Do that again but select all of the first line and all of the second line with the exception of the %>% at the end of the second line. What does it output?
 
@@ -171,8 +179,7 @@ pressure %>%
 
 Note, you may see references to a tibble, which is a tidyverse version of a data frame (and kind of sounds like the word table). They are used the same way in code. 
 
-
-## Plot data usign ggplot()
+## Plot data using ggplot()
 
 Data is often easier to think about when we plot it. We are going to use the function ggplot() to display our data graphically. The package that contains ggplot was loaded when we loaded tidyverse. It is a little complicated to start with ggplot because we have to use the nested function aes(), which stands for aesthetic, to state which column will be plotted on the x-axis and which will be plotted on the y-axis. 
 
@@ -181,15 +188,16 @@ pressure %>%
   ggplot(aes(x=temperature, y=pressure))
 ```
 
-In one more twist of complications, the above doesn't actually show us any data. It just lays out the axes. To plot the data points we have to use one more function, in this case geom_point() to plot a scatterplot. The name is a bit esoteric, but the "geom" part refers to the fact that we are making geometric object and the "point" part refers to the fact that we want to plot points.
+In one more twist of complications, the above doesn't actually show us any data. It just lays out the axes. To plot the data points we have to use one more function, in this case geom_point() to plot a scatter plot. The name is a bit esoteric, but the "geom" part refers to the fact that we are making geometric object and the "point" part refers to the fact that we want to plot points.
 
-And in one more annoying twist of coding, when we are modifying output from ggplot() we have to use a "+" sign instead of "%>%". There is no good reason for this, it is artificant of how these functions developed over time.
+And in one more annoying twist of coding, when we are modifying output from ggplot() we have to use a "+" sign instead of "%>%". There is no good reason for this, it is artifact of how these functions developed over time.
 
 ```{r}
 pressure %>%
   ggplot(aes(x=temperature, y=pressure)) + #within aes() define x and y #use the + sign instead of %>% once you are modifying ggplot output
-  geom_point() #scatterplot
+  geom_point() #scatter plot
 ```
+
 While the above looks fine, many purists want a cleaner look without the background grid. There is a actually some theoretical rational for that, in ideas developed by Edward Tufte in book called "The Visual Display of Quantitative Information". Tufte argued that the bulk of the "ink" in a figure should be on the data of interest and not all the dressing around the data. In other words, eliminate the grid lines so that your eye can focus on the data.
 
 ```{r}
@@ -199,12 +207,16 @@ pressure %>%
   theme_classic() #simple graph with no grid lines
 ```
 
+In the spirit of increasing the ink dedicated to the data, here is how you can use "size" to make the points bigger. I'm also going to change the shape from a filled-in-dot to an open circle. In general I prefer open circles because of they nicely display points when there are lots of partially overlapping data points. That is not the case here, but we'll practice the code now. 
+
 ```{r}
 pressure %>%
   ggplot(aes(x=temperature, y=pressure)) +
   geom_point(shape = 1, size = 3) + #use shape and size to change the shape and size of the points
   theme_classic()
 ```
+
+Now I am going to use the "xlab" function to capitalize the x-axis because that is generally better format. Notice how in each case, I am taking previous code and modifying it slightly to make it more complicated. The final chunk of code looks complicated, but we built it step by step.
 
 ```{r}
 pressure %>%
@@ -214,9 +226,11 @@ pressure %>%
   xlab("Temperature")
 ```
 
-Modify the code to capitalize the name of the y-axis as well. Hint, the function is called ylab()
+Modify the code above so that the name of the y-axis is capitalized as well. Hint, the function is called ylab()
 
 # Summarize and Group_by
+
+We are going to switch to another data set, in this case showing the sepal and petal length and width that was measured on some iris flowers of a few different species. In the case of an iris, the sepal are the three broad purple parts of the flower that look like outer flower petals but are derived from tissue that typically sits just below the flower in most other plants. In an iris, the petals are the three purple parts that stand more upright in the center fo the sepals. 
 
 ```{r}
 iris
@@ -224,11 +238,16 @@ iris
 
 ## summarize()
 
+The "summarize" function is used to take a number of rows and reduce them to a single number, based on whatever functions you provide. In this case, we'll use summarise to take the average petal width of all flowers in the data. We've also include the function n(), which will report the number of flowers included in the average.
+
 ```{r}
 iris %>%
-  summarise(ave_petal = mean(Petal.Width))
+  summarise(ave_petal = mean(Petal.Width), numer_of_flowers = n())
 ```
+
 ## group_by()
+
+The "group_by" function is used to group the data into subsets based on a categorical field, in this case Species. This should calculate the aveage petal width for each species.
 
 ```{r}
 iris %>%
@@ -238,14 +257,17 @@ iris %>%
 
 ## bar plot
 
+To plot that data, we'll use ggplot again, but 
+
 ```{r}
 iris %>%
   group_by(Species) %>%
   summarise(ave_petal = mean(Petal.Width)) %>%
   ggplot(aes(x=Species, y=ave_petal)) +
-  geom_bar(stat="identity") +
+  geom_bar(stat="identity") + #bar plot and the stat="identity" tells the code to simple plot the given x and y in the aes(). Without that, the default is to count the number of times something occurs in the data and display it on the y-axis. 
   theme_classic()
 ```
+
 # Resources for Finding Help
 
 Even I don't walk around with all of these details in my head. To make the above graph, I had to Google "R bar plot". I ended up using this website <http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization>, which showed my how to includ"e the stat="identity" part in geom_bar. Looking up example code in Google is very useful. It is probably the number way I look for coding information. A simple search such as "tidyverse summarise" quickly gets you to useful sites.
@@ -289,22 +311,21 @@ Note, we've introduced a new function above, and I suspect you can figure out wh
 
 Everyone makes mistakes coding, or what we call bugs. A key skill set is learning to debug your code. The following examples have errors. See if you can correct them, i.e. debug the following code.
 
-Challenge 1
+### Challenge 1
 
 ```{r}
 (3.4, 5, 6.8, 10, 2.4) %>%
   mean()
 ```
 
-Challenge 2
+### Challenge 2
 
 ```{r}
 (6.5, 12.3, 4.3 10, 23.5) %>%
   mean()
 ```
 
-
-Challenge 3
+### Challenge 3
 
 This uses geom_jitter, which is a version of geom_point, i.e. the scatterplot, which adds or subtracts a random value to shift potentially overlappign points so that you can see them all. Hint, the bug in this code is not within "geom_jitter(shape = 1)". That part is correctly used in this code.
 
@@ -315,7 +336,7 @@ iris %>%
   theme_classic()
 ```
 
-Challenge 4
+### Challenge 4
 
 Using the pressure data, plot the pressure versus the temperate as a line instead of a scatter plot. Ideally, remove the grid lines as well.
 
@@ -326,7 +347,7 @@ pressure %>%
 
 ```
 
-Bonus Challenge
+### Bonus Challenge
 
 Now make a copy of the above plot. Modify it to include the line and each of the points, i.e the line and the dots, by using ggplot(). You actually already know all of the code to make this happen, but you have to combine the code in new ways. Feel free to use Google and search for an answer. I recommend including "ggplot" in your search.
 
