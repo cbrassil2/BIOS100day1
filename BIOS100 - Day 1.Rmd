@@ -341,11 +341,7 @@ pressure %>%
 Now make a copy of the above plot. Modify it to include the line and each of the points, i.e the line and the dots, by using ggplot(). You actually already know all of the code to make this happen, but you have to combine the code in new ways. Feel free to use Google and search for an answer. I recommend including "ggplot" in your search.
 
 ```{r}
-pressure %>%
-  ggplot(aes(x=temperature,y=pressure)) +
-  theme_classic() +
-  geom_line() +
-  geom_point()
+
 ```
 
 # Knit your workbook
