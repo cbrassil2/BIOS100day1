@@ -289,33 +289,38 @@ The book "R for Data Science (2e)" will cover many of the above topics in more d
 
 ## Tidyverse Practice
 
+### Challenge 1A: 
 Re-write the following code using tidyverse structure instead of base R. Hint: two lines of code for beginner status, but expand to three lines of code for master status.
 
 ```{r}
 max(pressure$temperature)
 ```
 
+### Challenge 1B:
+
 Note, we've introduced a new function above, and I suspect you can figure out what it does. In words, describe what your above re-written code does?
+
+TYPE ANSWER HERE: 
 
 ## Debug
 
 Everyone makes mistakes coding, or what we call bugs. A key skill set is learning to debug your code. The following examples have errors. See if you can correct them, i.e. debug the following code.
 
-### Challenge 1
+### Challenge 2
 
 ```{r}
 (3.4, 5, 6.8, 10, 2.4) %>%
   mean()
 ```
 
-### Challenge 2
+### Challenge 3
 
 ```{r}
 (6.5, 12.3, 4.3 10, 23.5) %>%
   mean()
 ```
 
-### Challenge 3
+### Challenge 4
 
 This uses geom_jitter, which is a version of geom_point, i.e. the scatter plot, which adds or subtracts a random value to shift potentially overlapping points so that you can see them all. Hint, the bug in this code is not within "geom_jitter(shape = 1)". That part is correctly used in this code.
 
@@ -326,7 +331,7 @@ iris %>%
   theme_classic()
 ```
 
-### Challenge 4
+### Challenge 5
 
 Using the pressure data, plot the pressure versus the temperate as a line instead of a scatter plot. Ideally, remove the grid lines as well.
 
